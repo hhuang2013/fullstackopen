@@ -2,32 +2,32 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 
-const Header = (props) => (
+const Header = ({name}) => (
   <>
-    <h1>{props.name}</h1>
+    <h1>{name}</h1>
   </>
 )
 
-const Part = (props) => (
+const Part = ({part}) => (
   <>
     <p>
-      {props.part.name} {props.part.exercises}
+      {part.name} {part.exercises}
     </p>
   </>
 )
 
-const Content = (props) => (
+const Content = ({parts}) => (
   <div>
-    <Part part={props.parts[0]} />
-    <Part part={props.parts[1]} />
-    <Part part={props.parts[2]} />
+    <Part part={parts[0]} />
+    <Part part={parts[1]} />
+    <Part part={parts[2]} />
   </div>
 )
 
 
-const Total = (props) => (
+const Total = ({parts}) => (
   <>
-    <p>Number of exercises {props.parts[0].exercises + props.parts[1].exercises + props.parts[2].exercises}</p>
+    <p>Number of exercises {parts[0].exercises + parts[1].exercises + parts[2].exercises}</p>
   </>
 )
 
