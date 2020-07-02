@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 
-const Header = ({name}) => (
+const Header = ({ name }) => (
   <>
     <h1>{name}</h1>
   </>
 )
 
-const Part = ({part}) => (
+const Part = ({ part }) => (
   <>
     <p>
       {part.name} {part.exercises}
@@ -16,16 +16,14 @@ const Part = ({part}) => (
   </>
 )
 
-const Content = ({parts}) => (
+const Content = ({ parts }) => (
   <div>
-    <Part part={parts[0]} />
-    <Part part={parts[1]} />
-    <Part part={parts[2]} />
+    {parts.map((part, i) => <Part part={part} key={i} />)}
   </div>
 )
 
 
-const Total = ({parts}) => (
+const Total = ({ parts }) => (
   <>
     <p>Number of exercises {parts[0].exercises + parts[1].exercises + parts[2].exercises}</p>
   </>
